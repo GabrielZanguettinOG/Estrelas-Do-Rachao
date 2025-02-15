@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #FFF;
+}
+
+header p {
+    margin-top: 15px;
+    color: #FFF;
+    text-align: center;
+}
+
+body {
+    background-color: #202124;
+}
+
+
+li,
+li a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+li {
+    background-color: grey;
+    padding: 0.5rem 2.5rem;
+    border-radius: 5px;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+li:hover {
+    opacity: 1
+}
+
+#add-user-container {
+    display: flex;
+    width: 400px;
+    margin: 1rem auto 0;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#add-user-container input,
+#add-user-container button {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#add-user-container input {
+    flex: 1;
+    background-color: transparent;
+    border: 1px solid #525356;
+    color: white;
+}
+
+#add-user-container button {
+    cursor: pointer;
+}
+
+#users-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 430px);
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid #FFF;
+    position: relative;
+    gap: 10px;
+}
+
+.user h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    display: block;
+    overflow: hidden;
+    color: #FFF;
+    user-select: none;
+}
+.add-star {
+    padding: 10px;
+    border-radius: 4px;
+    position: absolute;
+    top: 10px;
+    right: 55px;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.add-star:hover {
+    background-color: gold;
+    border: 1px solid #202124;
+}
+.user .bi-plus-lg {
+    z-index: 10;
+    color: #FFF;
+}
+
+.delete-user {
+    padding: 10px;
+    border-radius: 4px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.delete-user:hover {
+    background-color: red;
+    border: 1px solid #202124;
+}
+.user .bi-trash {
+    z-index: 10;
+    color: #FFF;
+}
+.stars-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    max-width: 90%; 
+    margin-top: 35px;
+}
+.user .bi-star.gold {
+    color: gold;
+    display: flex;
+    top: 10px;
+    left: 15px;
+}
+
+.user .bi-star.purple {
+    color: purple;
+    display: flex;
+    top: 10px;
+    left: 15px;
+}
+
+#message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: auto;
+    max-width: 90%;
+}
+
+span {
+    background-color: rgb(228, 167, 14);
+    color: #FFF;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(20px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.red {
+    background-color: rgb(228, 14, 14);
+    color: #FFF;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(20px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.transitioned {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 536px) {
+    #users-container {
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+    #add-user-container {
+        width: 100%;
+        padding: 0 2rem;
+    }
+}
+
+@media (min-width: 536.01px) {
+    #users-container {
+        justify-content: center;
+    }
+}
